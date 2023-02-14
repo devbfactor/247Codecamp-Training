@@ -1,0 +1,35 @@
+html {
+    background-color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    border: 1px solid aquamarine;
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-left: 80px;
+}
+
+h1 {
+    color:coral;
+}
+
+h3, i {
+    color: aquamarine;
+}
+
+p, ul {
+    color: coral;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+footer {
+    padding: 10px;
+    text-align: center;
+    color:coral;
+  }
