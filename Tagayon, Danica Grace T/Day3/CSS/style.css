@@ -1,0 +1,46 @@
+p {
+    color: red;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#p1 {
+    color:blueviolet
+}
+
+.p2 {
+    color:crimson
+}
+
+.p3 {
+    background-color: aqua;
+}
+
+h1, h2, h3 {
+    color:gold
+}
+
+p.p3 {
+    background-color: dimgrey;
+}
+
+a:hover {
+    color: darkslateblue;
+}
+
+a.active {
+    background-color: blue;
+}
+
+a.focus {
+    background-color: darkgoldenrod;
+}
+
+.bg {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color:indianred;
+    background-size: contain;
+    background-image: url(img/ninja.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20em;
+}
