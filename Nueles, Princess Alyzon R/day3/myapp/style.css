@@ -1,0 +1,61 @@
+p {
+    color: red;
+}  
+
+#paragraph1 {
+    color:darkolivegreen;
+}
+
+.p2 {
+    color:darkmagenta
+}
+
+/* .p3 {
+    background-color: burlywood;
+} */
+
+.p4 {
+    background-color: darkgrey;
+}
+
+* {
+    font-size: 20px;
+}
+
+h1 , h2 , h3 {
+    color:blue;
+    font-family: 'Poppins', sans-serif;
+}
+
+p.p4 {
+    background-color:lightsalmon;
+}
+
+a:visited {
+    color: yellow
+}
+
+a:hover{
+    background-color: brown;
+}
+
+a:active {
+    color: orangered
+}
+
+a:focus {
+    background-color: blue;
+}
+
+.bg {
+    /* background-color: red;
+    background-image: url(img/bg1.jpg); 
+    background-size: cover;*/
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 10em; 
+        /* (width * font size)
+            (10 * 20px = 200px)
+        */
+}
+
