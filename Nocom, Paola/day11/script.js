@@ -1,74 +1,33 @@
-// Represent an array of blog posts.
+let btn1 = document.querySelector("#one");
+let btn2 = document.querySelector("#two");
+let btn3 = document.querySelector("#three");
+let btn4 = document.querySelector("#four");
 
-const allBlogs = [
-    {
-       author: 'Alan',
-       email: 'alan@mail.com',
-       blogs: [
-            {
-                title: 'JS Modules',
-                body: 'Js is ...'
-            },
+// btn1.addEventListener('click', function(e){
+//   // alert("1");
+//   console.log(e.target)
+//   console.log(e.target.textContent)
+// });
 
-            {
-                title: 'Node Express',
-                body: 'Express is ...'
-            },
-        ] 
-    },
-    {
-        author: 'Bry',
-        email: 'bry@mail.com',
-        blogs: [
-             {
-                 title: 'Smart Contract',
-                 body: 'Smart Contract is ...'
-             },
- 
-             {
-                 title: 'Blockchain',
-                 body: 'Blockchain is ...'
-             },
-         ] 
-     },
-     {
-        author: 'Gab',
-        email: 'gab@mail.com',
-        blogs: [
-             {
-                 title: 'Creating your own Crypto',
-                 body: 'Crypto is ...'
-             },
- 
-             {
-                 title: 'Ordinal inscription',
-                 body: 'Ordinal inscription is ...'
-             },
-         ] 
-     }
-]
+// btn2.addEventListener("click", function(){
+//   alert("2");
+// });
 
+// btn3.addEventListener("click", function(){
+//   alert("3");
+// });
 
-// allBlogs.forEach(x => console.log(x.author));
+// btn4.addEventListener("click", function(){
+//     alert("4");
+// });
 
-// allBlogs.forEach(function(blogs) {
-//     const author = blogs.author;
-//     console.log(author);
-// }
-// );
+const getContent =(e)=>{
+    let content = e.target.innerHTML;
+    console.log(content);
+}
 
-// allBlogs.forEach((blog)=> {
-//     console.log(`Author: ${blog.author}`)
-// })
-
-
-allBlogs.forEach(blog => {
-    console.log(`Author: ${blog.author}`)
-
-    for(let counter=0;counter< blog.blogs.length;counter++){
-        console.log(`Title ${counter+1}: ${blog.blogs[counter].title}`)
-    }
-
-    console.log('=====')
-});
+btn1.addEventListener('click', getContent);
+btn2.addEventListener('click', getContent);
+btn3.addEventListener('click', getContent);
+btn4.addEventListener('click', getContent);
 
