@@ -24,11 +24,14 @@ const products = [
 */
 
 // Get the table body
-const productList = document.querySelector('.product-list')
+const productList = document.querySelector('.product-list');
 
 // Get the shopping cart
-const productCart = []
-const cartList = document.querySelector('#cart')
+const productCart = [];
+const cartList = document.querySelector('#cart');
+
+const cartPrice = document.createElement('p');
+let totalPrice = 0;
 
 products.forEach(product => {
     //console.log(product.name)
@@ -54,15 +57,24 @@ products.forEach(product => {
             price: product.price
         }
         productCart.push(newProduct);
+        totalPrice += product.price;
         console.log(productCart);
+        console.log(`Total Price: ${totalPrice}`);
 
         document.querySelector('#total-items').innerHTML = productCart.length;
 
         // Add to shopping cart
         const cartItem = document.createElement('li')
+
         cartItem.textContent = `Product: ${product.name}, Price: ${product.price}`
+        cartPrice.textContent = `Total Price: \$${totalPrice}`
 
         cartList.appendChild(cartItem)
+
+        if(productCart.length > 0) {
+            cartList.appendChild(cartPrice);
+        }
+
 
     })
 
