@@ -17,7 +17,8 @@
 
     <script type="text/javascript">
 
-        const getSingleUser = () => {
+/* OLD getSingleUser code
+         const getSingleUser = () => {
 
             let id = document.querySelector('#input1').value
             // console.log(id)
@@ -34,9 +35,24 @@
 
                     document.querySelector('#output').innerHTML = user;
                 })
+        } */
+
+        const getSingleUser = async () => {
+            let id = document.querySelector('#input1').value;
+
+            let user = '';
+            let userId = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+            let userData = await userId.json();
+            
+            user = `<li>Name: ${userData.name}</li>
+                    <li>Email: ${userData.email}</li>`;
+
+            document.querySelector('#output').innerHTML = user;
+            console.log(`User #${id} loaded`)
         }
 
-        const getUsers = () => {
+/* OLD getUsers code
+         const getUsers = () => {
             let results = '';
 
             fetch('https://jsonplaceholder.typicode.com/users')
@@ -55,8 +71,21 @@
                     document.querySelector('#output').innerHTML = results 
 
                 })
+        } */
+
+        const getUsers = async () => {
+            let results = '';
+
+            let users = await fetch('https://jsonplaceholder.typicode.com/users');
+            let usersData = await users.json();
+
+            usersData.forEach((user)=>{
+                results += `<li>${user.name}</li>`
+            })
+            console.log('All users loaded')
+            document.querySelector('#output').innerHTML = results 
         }
-        
+
         let btn1 = document.querySelector('#btn1')
         btn1.addEventListener('click',getUsers)
 
