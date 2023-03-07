@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+</head>
+<body>
+    <h1>Using the Fetch API</h1>
+    <button id="btn1">Get all users</button>
+    <input type="text" placeholder="Enter User id" id="input1" ><button id="btn2">Get User</button>
+    <ul id="output">
+    
+    </ul>
+
+     <script type="text/javascript">
+        const getSingleUser = () => {
+
+            let id = document.querySelector('#input1').value
+            // console.log(id)
+            
+        
+            let user = '';
+
+            fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+            .then((response)=>{
+                return response.json()
+            })
+            .then((user)=>{
+                console.log(user.username)
+
+                
+                user  = `<li>Username: ${user.username}</li>
+                         <li>Username: ${user.email}</li>
+                        `
+                document.querySelector('#output').innerHTML=user
+            })
+          
+        }
+        
+
+        
+
+        const getUsers = () =>{
+            let results = '';
+            // fetch('https://jsonplaceholder.typicode.com/todos')
+                // .then(response=>response.json()) //implicit return
+                //     // console.log(response)
+                    
+                     
+                // .then((data)=>{
+                //     console.log(data)
+                // })
+            
+            // Fetch returns a promise
+            // a promise can be fulfilled or rejected
+            // append a .then method for promise
+            fetch('https://jsonplaceholder.typicode.com/users')
+                    .then((response)=>{
+                       return response.json()
+                    })
+                    .then((users)=>{
+                        users.forEach((user)=>{
+                            // console.log(user.username)
+                            // console.log(user.email)
+                            // console.log("==========")
+                            
+                            results += `<li>${user.username}</li>`
+                            
+
+                        })
+                        console.log(results)
+                        document.querySelector('#output').innerHTML = results
+                        
+                    })
+                  
+
+        }
+        let btn1 = document.querySelector('#btn1')
+        btn1.addEventListener('click',getUsers)
+        
+        let btn2 = document.querySelector('#btn2')
+        btn2.addEventListener('click',getSingleUser)
+     </script>
+</body>
+</html>

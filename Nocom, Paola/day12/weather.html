@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fetch API - Weather</title>
+</head>
+<body>
+    <h1>Check Location</h1>
+    <select name="time" id="input">
+        <option value=" "> </option>
+        <option value="AM">AM</option>
+        <option value="PM">PM</option>
+    </select>
+    <ul id="output">
+
+    </ul>
+
+    <script type="text/javascript">
+
+        const getSingapore = async () => {
+            let location = await fetch(`http://api.weatherapi.com/v1/current.json?key=880c43a219434e40b6d74505230603&q=Singapore`);
+            let locationData = await location.json();
+            // console.log(timeInput)
+            console.log(locationData)
+        }
+
+        const getManila = async () => {
+            let location = await fetch(`http://api.weatherapi.com/v1/current.json?key=880c43a219434e40b6d74505230603&q=Manila`);
+            let locationData = await location.json();
+            // console.log(timeInput)
+            console.log(locationData)
+        }
+
+        const getInfo = async () => {
+            let timeInput = document.querySelector('#input').value;
+            console.log(timeInput)
+            if (timeInput==="AM") {
+                await getSingapore()
+            } else if (timeInput==="PM") {
+                await getManila()
+            } else {
+                console.log(`Select AM/PM`)
+            }
+        }
+
+        let time = document.querySelector('#input')
+        time.addEventListener('change',getInfo)
+    </script>
+    
+</body>
+</html>
