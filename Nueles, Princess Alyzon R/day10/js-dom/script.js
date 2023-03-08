@@ -46,3 +46,4 @@ yelcol.addEventListener('click', function() {
 
 
 let cells = document.querySelectorAll('.box')
+
