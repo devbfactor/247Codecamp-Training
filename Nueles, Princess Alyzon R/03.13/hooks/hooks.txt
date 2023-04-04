@@ -1,0 +1,9 @@
+Hook = special function inside the react library
+
+useState = accepts initial state and returns 2 values: function and current state;
+
+useRef = creates references (like a bookmark) point inside the component
+
+useEffect = it will run the side effect along the intended action of the function
+
+useContext - is used to manage global data in React app. It allows passing of data from a parent component without the need of going through many components. 
